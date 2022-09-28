@@ -1,0 +1,246 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* view port height - determina que a altura mínima do body será a altura da tela */
+    margin: 0;
+    background-color: #F8F5EC;
+    font-family: 'Raleway', sans-serif;
+}
+
+#vaquinha1{
+    background-image: url(/img/background-nayzices.png);
+    background-repeat: repeat-y;
+    background-position: left;
+    height: 100%;
+    width: 100%;
+    /*position: absolute;  remove o elemento da sequência lógica da página, fazendo com que possamos posicioná-lo em qualquer lugar */
+    position: fixed;
+    z-index: -1; /* essa propriedade só funciona quando a position está definida, e é responsável por ditar a disposição de um elemento sobre o outro */
+    
+}
+
+#vaquinha2{
+    background-image: url(/img/background-nayzices2.png);
+    background-repeat: repeat-y;
+    background-position: right;
+    height: 100%;
+    width: 100%;
+    /*position: absolute;  remove o elemento da sequência lógica da página, fazendo com que possamos posicioná-lo em qualquer lugar */
+    position: fixed;
+    z-index: -1; /* essa propriedade só funciona quando a position está definida, e é responsável por ditar a disposição de um elemento sobre o outro */   
+}
+
+#menu{
+    display: flex;
+    /*position: relative;  a posição será baseada no parente dele e não na tela inteira, não remove o elemento da sequência lógica da página. se o posicionamento não for definido (top, bottom, etc.), nada muda */
+    position: fixed;
+    z-index: 1;
+    justify-content: space-between;
+    width: 100%;
+    height: 85px;
+    background-color: #65946ce1;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.418);
+}
+
+#menu img{
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-start;
+    align-self: center;
+    margin-left: 22px;
+    width: 7.8%;
+    max-width: 100px;
+}
+
+#menu ul{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#menu a{
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.418);
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    margin-right: 30px;
+    transition: 500ms;
+}
+
+#menu a:hover{
+    font-size: 20px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: auto; 
+    /*height: 65px;*/
+    width: 100%;
+    gap: 10px;      
+}
+
+
+.linha1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.linha1 p{
+    color: #584a47;
+    font-size: 17px;
+}
+
+.linha2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 30px;
+}
+
+.linha2 img{
+    width: 35px;
+    transition: 500ms;
+}
+
+.linha2 img:hover{
+    width: 40px;
+}
+
+.linha2 a{
+    width: fit-content;
+}
+
+#bloco{
+    display: flex;
+    margin: 125px 150px 0;
+    background-color: #c0d6b3;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.418);
+    border-radius: 15px;
+}
+
+
+#bloco img{
+    width: 50%;
+    border-radius: 15px 0 0 15px;
+}
+
+#bloco p{
+    color: #3f2823;
+    padding: 50px;
+    font-size: 25px;
+    align-self: center;
+    text-align: center;
+}
+
+.bloco2{
+    display: flex;
+    margin: 50px 150px 0;
+    background-color: #c0d6b3;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.418);
+    border-radius: 15px;
+}
+
+.bloco2 img{
+    width: 50%;
+}
+
+.bloco2 .img1{
+    border-radius: 0 15px 15px 0;
+}
+
+.bloco2 .img2{
+    border-radius: 15px 0 0 15px;
+}
+
+.bloco2 p{
+    color: #3f2823;
+    padding: 50px;
+    font-size: 25px;
+    align-self: center;
+    text-align: center;
+}
+
+#botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.img-botao{
+    display: flex;
+    width: 22%;
+    transition: 500ms;
+}
+
+.img-botao:hover{
+    width: 23%;
+}
+
+@media (max-width: 925px){
+
+    #menu a{
+        margin-right: 15px;
+        font-size: 15px;
+     }
+ 
+     #menu img{
+         min-width: 80px;
+     }
+     
+     #menu ul{
+         flex-wrap: wrap;
+     }
+
+    #bloco{
+        margin: 125px 50px 0;
+
+    }
+
+    .bloco2{
+        margin: 50px 50px 0;
+    }
+
+    .img-botao{
+        width: 50%;
+    }
+
+    .img-botao:hover{
+        width: 48%;
+    }
+
+
+}
+
+@media (max-width: 768px){
+    #bloco, .bloco2{
+        flex-direction: column;
+    }
+
+    #bloco img, .bloco2 img{
+        width: 100%;
+    }
+
+    #blocoMeio{
+        flex-direction: column-reverse;
+    }
+
+
+}
+
+
+@media (max-width: 390px){
+    #menu{
+        height: 120px;
+    }
+
+}
